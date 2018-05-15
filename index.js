@@ -1,7 +1,6 @@
 const button = document.querySelector('button.greeting')
-function changeText(){
-    const greeting = document.querySelector('p.greeting')
-    greeting.textContent = 'You done clicked'
+function changeText(ev){
+    ev.target.textContent = "clickity click"
 }
 
 button.addEventListener("click", changeText)
