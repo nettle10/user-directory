@@ -1,7 +1,41 @@
-const button = document.querySelector('button.greeting')
-function changeText(ev){
-    const greeting = document.querySelector('h1.lit')
-    greeting.textContent = 'for real though'
-}
+const form = document.querySelector("#userForm")
 
-button.addEventListener("click", changeText)
+const handleSubmit = function(ev){
+    ev.preventDefault()
+    const f = ev.target
+    const userName = f.userName.value
+    const age = f.age.value
+    const favoriteColor = f.favoriteColor.value
+
+    const users = document.querySelector('#users')
+
+    const list = document.createElement('ul')
+
+    const nameItem = document.createElement('li')
+    nameItem.textContent = `Name: ${userName}`
+
+    const ageItem = document.createElement('li')
+    ageItem.textContent = `Age: ${age}`
+
+    const colorItem = document.createElement('li')
+    colorItem.textContent = 'Favorite Color: '
+
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = favoriteColor
+    colorDiv.style.width = "6rem"
+    colorDiv.style.height = "3rem"
+
+    colorItem.appendChild(colorDiv)
+
+    list.appendChild(nameItem)
+    list.appendChild(ageItem)
+    list.appendChild(colorItem)
+    debugger
+    users.appendChild(list)
+
+    f.reset()
+    f.userName.focus()
+}
+debugger
+form.addEventListener("submit", handleSubmit)
+

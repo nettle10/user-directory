@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Directory</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>User Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>User Directory</h1>
+  <h1>User Directory</h1>
 
-    <h1 class = "lit">but not really</h2>
+  <form id="userForm">
+    <p>
+      <label for="userName">Name</label>
+      <input type="text" name="userName" autofocus>
+    </p>
+    <p>
+      <label for="age">Age</label>
+      <input type="number" name="age">
+    </p>
+    <p>
+      <label for="favoriteColor">Favorite color</label>
+      <input type="color" name="favoriteColor" value="#000000">
+    </p>
 
-    <h1>a project by Emma Nettleton</h3>
+    <button type="submit">Go</button>
+    <button type="reset">Clear</button>
+  </form>
 
-    <p class= 'greeting'>Welcome, friend</p>
+  <div id="users"></div>
 
-    <button class = 'greeting'>Change text</button>
-
-    <script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
