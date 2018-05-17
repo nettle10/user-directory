@@ -18,6 +18,16 @@ function renderListItem(label, value) {
     }
     return item
 }
+
+function renderList(data){
+    const list = document.createElement('ul')
+    const labels =Object.keys(data)
+    labels.forEach(function(label){
+        const item = renderListItem(label, data[label])
+        list.appendChild(item)
+    })
+    return list 
+}
 const handleSubmit = function(ev){
     ev.preventDefault()
     const f = ev.target
@@ -30,15 +40,7 @@ const handleSubmit = function(ev){
 
     const users = document.querySelector('#users')
 
-    const list = document.createElement('ul')
-
-    const labels =Object.keys(user)
-    labels.forEach(function(label){
-        const item = renderListItem(label, user[label])
-        list.appendChild(item)
-    })
-
-    users.appendChild(list)
+    users.appendChild(renderList(user))
 
     f.reset()
     f.userName.focus()
