@@ -8,9 +8,14 @@ function renderColor(color){
     return colorDiv
 }
 
-function renderListItem(label, value){
+function renderListItem(label, value) {
     const item = document.createElement('li')
-    item.textContent = `${label}: ${value}`
+    item.textContent = `${label}: `
+    try {
+        item.appendChild(value)
+    } catch(e) {
+        item.textContent += value 
+    }
     return item
 }
 const handleSubmit = function(ev){
