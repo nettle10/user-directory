@@ -7,6 +7,12 @@ function renderColor(color){
     colorDiv.style.height = "3rem"
     return colorDiv
 }
+
+function renderListItem(label, value){
+    const item = document.createElement('li')
+    item.textContent = `${label}: ${value}`
+    return item
+}
 const handleSubmit = function(ev){
     ev.preventDefault()
     const f = ev.target
@@ -18,19 +24,13 @@ const handleSubmit = function(ev){
 
     const list = document.createElement('ul')
 
-    const nameItem = document.createElement('li')
-    nameItem.textContent = `Name: ${userName}`
-
-    const ageItem = document.createElement('li')
-    ageItem.textContent = `Age: ${age}`
-
     const colorItem = document.createElement('li')
     colorItem.textContent = 'Favorite Color: '
 
     colorItem.appendChild(renderColor(favoriteColor))
 
-    list.appendChild(nameItem)
-    list.appendChild(ageItem)
+    list.appendChild(renderListItem('Name', userName))
+    list.appendChild(renderListItem('Age', age))
     list.appendChild(colorItem)
 
     users.appendChild(list)
